@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Fish Tank</string>
+    <string name="action_fetch">Get</string>
+</resources>
