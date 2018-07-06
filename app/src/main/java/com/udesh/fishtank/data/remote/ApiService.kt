@@ -1,7 +1,11 @@
 package com.udesh.fishtank.data.remote
 
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
 import io.reactivex.Single
+import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface ApiService {
@@ -9,29 +13,31 @@ interface ApiService {
     fun feeds(@Query("results") results: Int? = null): Single<Response>
 
     @GET("channels/419472/fields/1.json")
-    fun field1(@Query("results") results: Int? = null): Single<Response>
+    fun waterLevel(@Query("results") results: Int? = null): Single<Response>
 
     @GET("channels/419472/fields/2.json")
-    fun field2(@Query("results") results: Int? = null): Single<Response>
+    fun pressure(@Query("results") results: Int? = null): Single<Response>
 
     @GET("channels/419472/fields/3.json")
-    fun field3(@Query("results") results: Int? = null): Single<Response>
+    fun ph(@Query("results") results: Int? = null): Single<Response>
 
     @GET("channels/419472/fields/4.json")
-    fun field4(@Query("results") results: Int? = null): Single<Response>
+    fun o2(@Query("results") results: Int? = null): Single<Response>
 
     @GET("channels/419472/fields/5.json")
-    fun field5(@Query("results") results: Int? = null): Single<Response>
+    fun temperature(@Query("results") results: Int? = null): Single<Response>
 
     @GET("channels/419472/fields/6.json")
-    fun field6(@Query("results") results: Int? = null): Single<Response>
+    fun foodLeft(@Query("results") results: Int? = null): Single<Response>
 
-    @GET("channels/419472/fields/7.json")
-    fun field7(@Query("results") results: Int? = null): Single<Response>
+    @GET("update")
+    fun write(@Query("field1") results: Int = 0): Call<Void>
 
-    @GET("channels/419472/fields/8.json")
-    fun field8(@Query("results") results: Int? = null): Single<Response>
+
+//    @GET("channels/419472/fields/7.json")
+//    fun field7(@Query("results") results: Int? = null): Single<Response>
+//
+//    @GET("channels/419472/fields/8.json")
+//    fun field8(@Query("results") results: Int? = null): Single<Response>
 
 }
-
-//https://api.thingspeak.com/channels/419472/feeds.json?&results=1

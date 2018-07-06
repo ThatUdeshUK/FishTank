@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Fish Tank</string>
     <string name="action_fetch">Get</string>
+    <string name="water_level">Water Level</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="pressure">Pressure</string>
+    <string name="ph">pH Value</string>
+    <string name="o2">O2</string>
+    <string name="temp">Temperature</string>
+    <string name="food">Food Left</string>
 </resources>

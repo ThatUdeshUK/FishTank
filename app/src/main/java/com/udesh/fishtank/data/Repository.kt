@@ -10,4 +10,14 @@ class Repository(private val remoteDataSource: RemoteDataSource) {
         return remoteDataSource.getFeeds()
     }
 
+    fun setOperation(operation: Int): Single<Boolean> {
+        return remoteDataSource.setOperation(operation)
+    }
+
+    object Operation {
+        val NON = 0
+        val FOOD = 1
+        val WATER = 2
+    }
+
 }
