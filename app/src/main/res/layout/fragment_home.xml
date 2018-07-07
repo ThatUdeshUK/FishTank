@@ -15,7 +15,15 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/asdsa"
+                android:text="FISHY"/>
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -24,6 +32,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:theme="@style/CardTheme"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -39,6 +48,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="1dp"
+                app:cardBackgroundColor="#3F51B5"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0.5dp"
                 android:layout_weight="1">
@@ -48,18 +58,21 @@
                     android:layout_height="wrap_content"
                     android:padding="16dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/food"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="#88FFFFFF" />
 
                     <TextView
                         android:id="@+id/food_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                         android:maxLines="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        android:textColor="#FFF"
                         tools:text="100" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -76,6 +89,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="1dp"
+                    app:cardBackgroundColor="#1976D2"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0.5dp"
                     android:layout_weight="1">
@@ -90,14 +104,16 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/water_level"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:textColor="#88FFFFFF" />
 
                         <TextView
                             android:id="@+id/water_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                             android:maxLines="1"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                            android:textColor="#FFF"
                             tools:text="100" />
                     </LinearLayout>
 
@@ -110,6 +126,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="1dp"
+                    app:cardBackgroundColor="#00796B"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0.5dp"
                     android:layout_weight="1">
@@ -119,18 +136,21 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/pressure"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
                         <TextView
-                            android:id="@+id/pressure_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                            android:text="@string/o2"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:textColor="#88FFFFFF" />
+
+                        <TextView
+                            android:id="@+id/o2_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:maxLines="1"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                            android:textColor="#FFF"
                             tools:text="100" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -143,26 +163,31 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#7E57C2"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="0.5dp"
-                android:layout_weight="1">
+                app:cardElevation="0.5dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/temp"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="#88FFFFFF" />
 
                     <TextView
                         android:id="@+id/temp_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                         android:maxLines="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        android:textColor="#FFF"
                         tools:text="37 C" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -171,6 +196,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -178,30 +204,35 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#303F9F"
                     app:cardCornerRadius="8dp"
-                    app:cardElevation="0.5dp"
-                    android:layout_weight="1">
+                    app:cardElevation="0.5dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="16dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/ph"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:textColor="#88FFFFFF" />
 
                         <TextView
                             android:id="@+id/ph_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                             android:maxLines="1"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                            android:textColor="#FFF"
                             tools:text="7" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -210,30 +241,35 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#00838F"
                     app:cardCornerRadius="8dp"
-                    app:cardElevation="0.5dp"
-                    android:layout_weight="1">
+                    app:cardElevation="0.5dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="16dp"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/o2"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
                         <TextView
-                            android:id="@+id/o2_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                            android:text="@string/pressure"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:textColor="#88FFFFFF" />
+
+                        <TextView
+                            android:id="@+id/pressure_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:maxLines="1"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                            android:textColor="#FFF"
                             tools:text="100" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
             </LinearLayout>
 
         </LinearLayout>

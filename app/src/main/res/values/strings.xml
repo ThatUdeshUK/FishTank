@@ -8,4 +8,5 @@
     <string name="o2">O2</string>
     <string name="temp">Temperature</string>
     <string name="food">Food Left</string>
+    <string name="action_up">Up</string>
 </resources>

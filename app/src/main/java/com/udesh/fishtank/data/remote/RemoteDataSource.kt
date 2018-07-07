@@ -1,8 +1,10 @@
 package com.udesh.fishtank.data.remote
 
 import com.udesh.fishtank.extensions.mainThreadSafely
+import io.reactivex.Observable
 import io.reactivex.Single
 import okhttp3.OkHttpClient
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -33,10 +35,10 @@ class RemoteDataSource {
         val key = if (isRead) readKey else writeKey
         val builder = Retrofit.Builder()
                 .baseUrl(baseUrl)
-        if (isRead) {
-            builder.addConverterFactory(GsonConverterFactory.create())
-                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        }
+//        if (isRead) {
+        builder.addConverterFactory(GsonConverterFactory.create())
+//                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//        }
         return builder.client(createOkHttpClient(key))
                 .build()
     }
@@ -46,7 +48,7 @@ class RemoteDataSource {
         return retrofit.create<ApiService>(ApiService::class.java)
     }
 
-    fun getFeeds(entryCount: Int? = null): Single<Response> {
+    fun getFeeds(entryCount: Int? = null): Call<Response> {
         return getApiService(true).feeds(entryCount)
     }
 

@@ -2,12 +2,14 @@ package com.udesh.fishtank.data
 
 import com.udesh.fishtank.data.remote.RemoteDataSource
 import com.udesh.fishtank.data.remote.Response
+import io.reactivex.Observable
 import io.reactivex.Single
+import retrofit2.Call
 
 class Repository(private val remoteDataSource: RemoteDataSource) {
 
-    fun getFeeds(): Single<Response> {
-        return remoteDataSource.getFeeds()
+    fun getFeeds(): Call<Response> {
+        return remoteDataSource.getFeeds(1)
     }
 
     fun setOperation(operation: Int): Single<Boolean> {
@@ -15,9 +17,8 @@ class Repository(private val remoteDataSource: RemoteDataSource) {
     }
 
     object Operation {
-        val NON = 0
-        val FOOD = 1
-        val WATER = 2
+        const val FOOD = 1
+        const val WATER = 2
     }
 
 }

@@ -20,20 +20,6 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        toolbar.inflateMenu(R.menu.home_menu)
-        toolbar.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.action_refresh -> {
-                    viewModel.loadFeeds()
-                    true
-                }
-                else ->false
-            }
-        }
-    }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.apply {
@@ -93,6 +79,11 @@ class HomeFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         viewModel.loadFeeds()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        viewModel.dispose()
     }
 
 }

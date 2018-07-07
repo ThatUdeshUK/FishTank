@@ -16,9 +16,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ToobarTheme"
+        android:clickable="true"
         app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/action_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Actions">
